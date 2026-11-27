@@ -1,0 +1,35 @@
+# Contexto do projeto para o Claude Code
+
+Leia e siga o `AGENTS.md`. Comece conferindo o perfil e as capacidades deste
+projeto com `npm run validate -- --list`: regra de capacidade desligada não se
+aplica.
+
+Depois leia, quando relevante:
+
+1. `docs/architecture.md`
+2. `docs/development-process.md`
+3. `docs/testing.md`
+4. `docs/styleguide.md` (antes de mexer em interface, quando a capacidade
+   `styleguide` está ligada)
+5. os arquivos relevantes em `docs/decisions`
+
+As skills do projeto estão disponíveis em `.claude/skills`.
+
+Para trabalho com vários arquivos ou ambíguo:
+
+1. inspecione os módulos relevantes;
+2. use a skill de planejamento (plan-feature);
+3. apresente o plano;
+4. implemente um incremento por vez;
+5. execute `npm run validate` (use `-- --changed` para iterar rápido);
+6. revise o diff final.
+
+Não expanda o escopo, não adicione dependências, não exponha
+segredos e não altere a arquitetura sem antes explicar a necessidade.
+
+Em interface: use os tokens de `@vitru/styleguide/tokens.css` (nunca cor
+literal), ícones de `lucide-react` e o kit de `@vitru/styleguide`. O
+styleguide da Vitru é opcional: vale enquanto a capacidade `styleguide` estiver
+ligada (`npm run validate -- --list`). Antes de rodar `npm run setup` pela
+primeira vez, pergunte ao usuário se ele quer o styleguide da Vitru ou uma
+identidade própria e passe `--identity=vitru` ou `--identity=propria`.
